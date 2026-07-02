@@ -1,0 +1,20 @@
+[package]
+name = "fourier-registry"
+version = "0.1.0"
+edition = "2021"
+description = "Canonical on-chain reputation registry for the Fourier ecosystem"
+license = "MIT"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+soroban-sdk = { workspace = true }
+
+[dev-dependencies]
+soroban-sdk = { workspace = true, features = ["testutils"] }
+
+[[test]]
+name = "registry"
+path = "../../tests/registry.rs"
+
