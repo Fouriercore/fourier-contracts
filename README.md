@@ -68,12 +68,12 @@ See the [Protocol Documentation](docs/protocol.md) for full endpoint specificati
 
 ### Prerequisites
 - **Rust Toolchain**: `stable` (Rust 1.81.0+ recommended)
-- **Target Target**: `wasm32-unknown-unknown`
+- **Target Target**: `wasm32v1-none`
 - **Stellar CLI**: (Optional, for deploying and CLI invocations)
 
 Install the target WASM toolchain:
 ```bash
-rustup target add wasm32-unknown-unknown
+rustup target add wasm32v1-none
 ```
 
 ---

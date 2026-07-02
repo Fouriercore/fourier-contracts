@@ -21,7 +21,7 @@ jobs:
         uses: dtolnay/rust-toolchain@stable
         with:
           components: rustfmt, clippy
-          targets: wasm32-unknown-unknown
+          targets: wasm32v1-none
 
       - name: Cache Cargo Dependencies
         uses: actions/cache@v4
@@ -45,4 +45,4 @@ jobs:
         run: cargo test --all
 
       - name: Build WebAssembly Targets
-        run: cargo build --target wasm32-unknown-unknown --release
+        run: cargo build --target wasm32v1-none --release
