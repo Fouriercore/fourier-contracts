@@ -25,7 +25,7 @@ echo "Step 1: Installing contract WASM on-chain..."
 WASM_HASH=$(stellar contract install \
   --network "$NETWORK" \
   --source "$ADMIN_KEY" \
-  --wasm target/wasm32-unknown-unknown/release/fourier_registry.wasm)
+  --wasm target/wasm32v1-none/release/fourier_registry.wasm)
 
 echo "Contract WASM installed successfully with hash: $WASM_HASH"
 
