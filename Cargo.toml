@@ -1,0 +1,19 @@
+[workspace]
+resolver = "2"
+members = [
+    "contracts/*",
+]
+
+[workspace.dependencies]
+soroban-sdk = "26.1.0"
+
+[profile.release]
+opt-level = "z"
+overflow-checks = true
+lto = true
+codegen-units = 1
+panic = "abort"
+
+[profile.release-with-logs]
+inherits = "release"
+debug = true
