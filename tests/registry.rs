@@ -1,8 +1,6 @@
 #![cfg(test)]
 
-use fourier_registry::{
-    RegistryContract, RegistryContractClient, ReputationStatus, RiskLevel,
-};
+use fourier_registry::{RegistryContract, RegistryContractClient, ReputationStatus, RiskLevel};
 use soroban_sdk::{testutils::Address as _, Address, BytesN, Env};
 
 fn setup_test_env<'a>() -> (Env, RegistryContractClient<'a>, Address) {
@@ -141,9 +139,30 @@ fn test_list_contracts() {
     let c3 = Address::generate(&env);
     let reporter = Address::generate(&env);
 
-    client.register_contract(&c1, &ReputationStatus::Verified, &RiskLevel::Low, &5, &reporter, &evidence_hash);
-    client.register_contract(&c2, &ReputationStatus::Warning, &RiskLevel::Medium, &50, &reporter, &evidence_hash);
-    client.register_contract(&c3, &ReputationStatus::Scam, &RiskLevel::Critical, &95, &reporter, &evidence_hash);
+    client.register_contract(
+        &c1,
+        &ReputationStatus::Verified,
+        &RiskLevel::Low,
+        &5,
+        &reporter,
+        &evidence_hash,
+    );
+    client.register_contract(
+        &c2,
+        &ReputationStatus::Warning,
+        &RiskLevel::Medium,
+        &50,
+        &reporter,
+        &evidence_hash,
+    );
+    client.register_contract(
+        &c3,
+        &ReputationStatus::Scam,
+        &RiskLevel::Critical,
+        &95,
+        &reporter,
+        &evidence_hash,
+    );
 
     // List all contracts
     let list = client.list_contracts(&0, &10);

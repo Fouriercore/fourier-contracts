@@ -109,7 +109,10 @@ impl RegistryContract {
             reporter.clone(),
         );
 
-        if matches!(status, ReputationStatus::Verified | ReputationStatus::Trusted) {
+        if matches!(
+            status,
+            ReputationStatus::Verified | ReputationStatus::Trusted
+        ) {
             events::emit_contract_verified(&env, contract, reporter);
         }
 
@@ -178,7 +181,10 @@ impl RegistryContract {
             reporter.clone(),
         );
 
-        if matches!(status, ReputationStatus::Verified | ReputationStatus::Trusted) {
+        if matches!(
+            status,
+            ReputationStatus::Verified | ReputationStatus::Trusted
+        ) {
             events::emit_contract_verified(&env, contract, reporter);
         }
 

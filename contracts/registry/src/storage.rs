@@ -55,7 +55,9 @@ pub fn get_total_contracts(env: &Env) -> u32 {
 
 /// Sets the total number of registered contracts.
 fn set_total_contracts(env: &Env, total: u32) {
-    env.storage().instance().set(&DataKey::TotalContracts, &total);
+    env.storage()
+        .instance()
+        .set(&DataKey::TotalContracts, &total);
     extend_instance_ttl(env);
 }
 
@@ -89,16 +91,16 @@ pub fn remove_record(env: &Env, contract: &Address) {
 /// Adds a contract to the paginated list tracking.
 pub fn add_contract_to_list(env: &Env, contract: &Address) {
     let mut total = get_total_contracts(env);
-    
+
     let index_key = DataKey::ContractAtIndex(total);
     let contract_key = DataKey::ContractIndex(contract.clone());
-    
+
     env.storage().persistent().set(&index_key, contract);
     env.storage().persistent().set(&contract_key, &total);
-    
+
     extend_persistent_ttl(env, &index_key);
     extend_persistent_ttl(env, &contract_key);
-    
+
     total += 1;
     set_total_contracts(env, total);
 }
@@ -109,14 +111,14 @@ pub fn remove_contract_from_list(env: &Env, contract: &Address) -> Result<(), Co
     if total == 0 {
         return Err(ContractError::StorageFailure);
     }
-    
+
     let contract_key = DataKey::ContractIndex(contract.clone());
     let idx: u32 = env
         .storage()
         .persistent()
         .get(&contract_key)
         .ok_or(ContractError::NotFound)?;
-    
+
     let last_idx = total - 1;
     if idx != last_idx {
         // Retrieve the last contract address
@@ -126,23 +128,25 @@ pub fn remove_contract_from_list(env: &Env, contract: &Address) -> Result<(), Co
             .persistent()
             .get(&last_index_key)
             .ok_or(ContractError::StorageFailure)?;
-            
+
         // Move the last contract to the index of the removed contract
         let target_index_key = DataKey::ContractAtIndex(idx);
-        env.storage().persistent().set(&target_index_key, &last_contract);
+        env.storage()
+            .persistent()
+            .set(&target_index_key, &last_contract);
         extend_persistent_ttl(env, &target_index_key);
-        
+
         // Update the moved contract's index mapping
         let swapped_contract_key = DataKey::ContractIndex(last_contract);
         env.storage().persistent().set(&swapped_contract_key, &idx);
         extend_persistent_ttl(env, &swapped_contract_key);
     }
-    
+
     // Clean up the storage keys for the last index and deleted contract
     let last_index_key = DataKey::ContractAtIndex(last_idx);
     env.storage().persistent().remove(&last_index_key);
     env.storage().persistent().remove(&contract_key);
-    
+
     set_total_contracts(env, last_idx);
     Ok(())
 }
@@ -151,21 +155,25 @@ pub fn remove_contract_from_list(env: &Env, contract: &Address) -> Result<(), Co
 pub fn list_records(env: &Env, offset: u32, limit: u32) -> Vec<ContractRecord> {
     let total = get_total_contracts(env);
     let mut records = Vec::new(env);
-    
+
     if offset >= total || limit == 0 {
         return records;
     }
-    
+
     let end = (offset + limit).min(total);
     for idx in offset..end {
         let index_key = DataKey::ContractAtIndex(idx);
-        if let Some(contract) = env.storage().persistent().get::<DataKey, Address>(&index_key) {
+        if let Some(contract) = env
+            .storage()
+            .persistent()
+            .get::<DataKey, Address>(&index_key)
+        {
             extend_persistent_ttl(env, &index_key);
             if let Some(record) = get_record(env, &contract) {
                 records.push_back(record);
             }
         }
     }
-    
+
     records
 }
