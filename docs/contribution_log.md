@@ -45,3 +45,4 @@ Detailed milestones and developer configuration notes log.
 - 2026-07-04 15:43:30 - log mainnet deployment checklist preparation
 - 2026-07-04 15:43:31 - note on-chain gas fee profiling results
 - 2026-07-04 15:43:31 - document contract size optimization tricks
+- 2026-07-04 15:43:31 - explain persistent storage rent calculations
