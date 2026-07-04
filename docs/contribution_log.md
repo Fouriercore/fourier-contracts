@@ -16,3 +16,4 @@ Detailed milestones and developer configuration notes log.
 - 2026-07-04 15:43:21 - add notes on contract instance size limitations
 - 2026-07-04 15:43:22 - document memory layout of data keys
 - 2026-07-04 15:43:22 - define reputation status transitions
+- 2026-07-04 15:43:22 - add guideline on prevention of self-reporting
