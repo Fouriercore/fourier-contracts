@@ -40,3 +40,4 @@ Detailed milestones and developer configuration notes log.
 - 2026-07-04 15:43:28 - document repository branching guidelines
 - 2026-07-04 15:43:29 - note commit message formatting standards
 - 2026-07-04 15:43:29 - log docker development environment setup
+- 2026-07-04 15:43:29 - add notes on stellar CLI version compatibility
