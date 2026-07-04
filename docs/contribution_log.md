@@ -37,3 +37,4 @@ Detailed milestones and developer configuration notes log.
 - 2026-07-04 15:43:28 - explain storage layout modifications
 - 2026-07-04 15:43:28 - document cargo build script details
 - 2026-07-04 15:43:28 - add detail on address validation logic
+- 2026-07-04 15:43:28 - document repository branching guidelines
