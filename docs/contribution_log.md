@@ -43,3 +43,4 @@ Detailed milestones and developer configuration notes log.
 - 2026-07-04 15:43:29 - add notes on stellar CLI version compatibility
 - 2026-07-04 15:43:30 - document testnet public networks endpoints
 - 2026-07-04 15:43:30 - log mainnet deployment checklist preparation
+- 2026-07-04 15:43:31 - note on-chain gas fee profiling results
