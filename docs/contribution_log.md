@@ -34,3 +34,4 @@ Detailed milestones and developer configuration notes log.
 - 2026-07-04 15:43:26 - verify code formatting guidelines
 - 2026-07-04 15:43:26 - document integration test suite structure
 - 2026-07-04 15:43:27 - note registry state transition logic
+- 2026-07-04 15:43:28 - explain storage layout modifications
