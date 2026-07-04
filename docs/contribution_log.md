@@ -18,3 +18,4 @@ Detailed milestones and developer configuration notes log.
 - 2026-07-04 15:43:22 - define reputation status transitions
 - 2026-07-04 15:43:22 - add guideline on prevention of self-reporting
 - 2026-07-04 15:43:22 - document test coverage targets
+- 2026-07-04 15:43:23 - note mock authentication usage in tests
