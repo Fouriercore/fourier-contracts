@@ -11,3 +11,4 @@ Detailed milestones and developer configuration notes log.
 - 2026-07-04 15:43:20 - note risk score calculation details
 - 2026-07-04 15:43:20 - document event emissions for registration
 - 2026-07-04 15:43:21 - write notes on O(1) pagination strategy
+- 2026-07-04 15:43:21 - explain TTL bump thresholds
