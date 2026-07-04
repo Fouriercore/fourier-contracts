@@ -24,3 +24,4 @@ Detailed milestones and developer configuration notes log.
 - 2026-07-04 15:43:24 - note WASM file size goal below 30KB
 - 2026-07-04 15:43:24 - document local testnet deployment flow
 - 2026-07-04 15:43:24 - add notes on verifier contract requirements
+- 2026-07-04 15:43:24 - write notes on governance transition design
