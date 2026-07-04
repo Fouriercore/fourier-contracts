@@ -27,3 +27,4 @@ Detailed milestones and developer configuration notes log.
 - 2026-07-04 15:43:24 - write notes on governance transition design
 - 2026-07-04 15:43:25 - add details on multi-signature verifications
 - 2026-07-04 15:43:25 - explain oracle integration capabilities
+- 2026-07-04 15:43:25 - describe treasury reward incentives
