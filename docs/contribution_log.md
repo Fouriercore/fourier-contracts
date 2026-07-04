@@ -47,3 +47,4 @@ Detailed milestones and developer configuration notes log.
 - 2026-07-04 15:43:31 - document contract size optimization tricks
 - 2026-07-04 15:43:31 - explain persistent storage rent calculations
 - 2026-07-04 15:43:31 - note contract serialization format choices
+- 2026-07-04 15:43:32 - document events parsing for indexers
