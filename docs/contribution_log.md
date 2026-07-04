@@ -52,3 +52,4 @@ Detailed milestones and developer configuration notes log.
 - 2026-07-04 15:43:32 - add notes on zeph indexer configuration
 - 2026-07-04 15:43:33 - document SDK package structure
 - 2026-07-04 15:43:33 - note web frontend dashboard architecture
+- 2026-07-04 15:43:33 - document future explorer integrations
