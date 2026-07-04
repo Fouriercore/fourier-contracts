@@ -6,3 +6,4 @@ Detailed milestones and developer configuration notes log.
 - 2026-07-04 15:43:19 - document cargo workspace configuration
 - 2026-07-04 15:43:19 - add entry for Soroban SDK version selection
 - 2026-07-04 15:43:19 - note Rust toolchain compatibility
+- 2026-07-04 15:43:19 - log registry architecture overview
