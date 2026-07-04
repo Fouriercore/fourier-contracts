@@ -22,3 +22,4 @@ Detailed milestones and developer configuration notes log.
 - 2026-07-04 15:43:23 - log Clippy clean status verify
 - 2026-07-04 15:43:23 - document optimized WASM compilation settings
 - 2026-07-04 15:43:24 - note WASM file size goal below 30KB
+- 2026-07-04 15:43:24 - document local testnet deployment flow
