@@ -1,0 +1,37 @@
+enum ReputationStatus {
+  Unknown
+  Pending
+  Verified
+  Flagged
+  Suspended
+}
+
+enum RiskLevel {
+  Low
+  Medium
+  High
+  Critical
+}
+
+type RegisteredContract @entity {
+  id: ID! # Contract address
+  contractAddress: String!
+  status: ReputationStatus!
+  riskLevel: RiskLevel!
+  riskScore: Int!
+  reporter: String!
+  registeredAtLedger: Int!
+  lastUpdatedLedger: Int!
+  isVerified: Boolean!
+}
+
+type RegistrationEvent @entity {
+  id: ID! # txHash-eventIndex
+  contract: RegisteredContract!
+  status: ReputationStatus!
+  riskLevel: RiskLevel!
+  riskScore: Int!
+  reporter: String!
+  timestamp: BigInt!
+  ledgerNumber: Int!
+}

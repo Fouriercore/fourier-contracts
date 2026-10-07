@@ -1,0 +1,32 @@
+name: fourier-registry-indexer
+network: testnet
+rpc_url: https://soroban-testnet.stellar.org
+
+subscriptions:
+  - name: contract_registered
+    contract_id: "C..." # Replace with deployed Fourier Registry contract ID
+    topics:
+      - "ContractRegistered"
+    start_ledger: 0
+    webhook_url: "http://localhost:3000/api/webhooks/mercury/registered"
+
+  - name: reputation_updated
+    contract_id: "C..."
+    topics:
+      - "ReputationUpdated"
+    start_ledger: 0
+    webhook_url: "http://localhost:3000/api/webhooks/mercury/reputation"
+
+  - name: contract_verified
+    contract_id: "C..."
+    topics:
+      - "ContractVerified"
+    start_ledger: 0
+    webhook_url: "http://localhost:3000/api/webhooks/mercury/verified"
+
+  - name: contract_removed
+    contract_id: "C..."
+    topics:
+      - "ContractRemoved"
+    start_ledger: 0
+    webhook_url: "http://localhost:3000/api/webhooks/mercury/removed"
